@@ -9,9 +9,9 @@
     },
     "api": {
       "type": "openapi",
-      "url": "https://your-domain.com/openapi.yaml"
+      "url": "https://manzke.github.io/chatgpt-pugin/openapi.yaml"
     },
-    "logo_url": "https://your-domain.com/logo.png",
+    "logo_url": "https://intrafind.com/themes/custom/grounded_intrafind/logo.svg",
     "contact_email": "support@intrafind.de",
     "legal_info_url": "https://intrafind.com/legal"
   }

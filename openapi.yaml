@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: iFinder Search API
+  description: Plugin to search and retrieve content using the iFinder enterprise search system.
+  version: 1.0.0
+servers:
+  - url: https://dama.dev.intrafind.io
+paths:
+  /public-api/retrieval/api/v1/search-profiles/{profileId}/_search:
+    get:
+      summary: Search for documents
+      description: Perform a search query to retrieve documents.
+      parameters:
+        - name: profileId
+          in: path
+          description: The ID of the search profile to use for the search.
+          required: true
+          schema:
+            type: string
+        - name: query
+          in: query
+          description: The query string to search for in Lucene syntax.
+          required: true
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: The offset of the first hit to return.
+          required: false
+          schema:
+            type: integer
+        - name: size
+          in: query
+          description: The maximum number of hits to return.
+          required: false
+          schema:
+            type: integer
+            default: 10
+      responses:
+        200:
+          description: A list of search results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: "1234-5678-90ab-cdef"
+                        title:
+                          type: string
+                          example: "Sample Document Title"
+                        summary:
+                          type: string
+                          example: "This is a summary of the document."
+                  total_hits:
+                    type: integer
+                    example: 42
+        400:
+          description: Invalid request parameters.
+        500:
+          description: Internal server error.

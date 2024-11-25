@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_model": "ifinder_search",
+    "name_for_human": "iFinder Search",
+    "description_for_model": "Search enterprise documents and retrieve relevant content.",
+    "description_for_human": "Plugin to search and retrieve content from the iFinder enterprise search system.",
+    "auth": {
+      "type": "oauth"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://your-domain.com/openapi.yaml"
+    },
+    "logo_url": "https://your-domain.com/logo.png",
+    "contact_email": "support@intrafind.de",
+    "legal_info_url": "https://intrafind.com/legal"
+  }
